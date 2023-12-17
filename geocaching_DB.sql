@@ -10,15 +10,14 @@ CREATE TABLE Caccie (
 
 -- Creazione della tabella Gruppi
 CREATE TABLE Gruppi (
-    ID INT PRIMARY KEY,
+    ID INT PRIMARY KEY AUTO_INCREMENT,
     PunteggioCumulativo INT,
     Modalita CHAR(1)
 );
 
-
 -- Creazione della tabella Giocatori
 CREATE TABLE Giocatori (
-    ID INT PRIMARY KEY,
+    ID INT PRIMARY KEY AUTO_INCREMENT,
     Nome VARCHAR(50),
     Cognome VARCHAR(50),
     Nikname VARCHAR(50),
@@ -29,7 +28,7 @@ CREATE TABLE Giocatori (
 
 -- Creazione della tabella Tappe
 CREATE TABLE Tappe (
-    ID INT PRIMARY KEY,
+    ID INT PRIMARY KEY AUTO_INCREMENT,
     RangeTappa INT,
     DataCreazione DATETIME,
     Domanda TEXT,
@@ -51,7 +50,7 @@ CREATE TABLE Tappe (
 
 -- Creazione della tabella Giocare
 CREATE TABLE Giocare (
-    ID INT PRIMARY KEY,
+    ID INT PRIMARY KEY AUTO_INCREMENT,
     DataInizioGame DATETIME,
     DataFineGame DATETIME,
     Punteggio INT,
@@ -65,22 +64,18 @@ CREATE TABLE Giocare (
     FOREIGN KEY (IDCaccia) REFERENCES Caccie(CodiceCaccia)
 );
 
-
-
 -- Creazione della tabella Collegare
 CREATE TABLE Collegare (
-    ID INT PRIMARY KEY,
+    ID INT PRIMARY KEY AUTO_INCREMENT,
     IDTappaPrec INT,
     IDTappaSucc INT,
     FOREIGN KEY (IDTappaPrec) REFERENCES Tappe(ID),
     FOREIGN KEY (IDTappaSucc) REFERENCES Tappe(ID)
 );
 
-
-
 -- Creazione della tabella Sbloccare
 CREATE TABLE Sbloccare (
-    ID INT PRIMARY KEY,
+    ID INT PRIMARY KEY AUTO_INCREMENT,
     DataSblocco DATETIME,
     IDGiocatore INT,
     IDTappa INT,
