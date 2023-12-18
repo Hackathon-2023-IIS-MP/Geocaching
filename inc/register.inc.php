@@ -85,13 +85,19 @@ function CreateUser($nome, $cognome, $email, $username, $password, $mysqli)
         //memorizzo l'ID
         $user->setID($insertedUserId);
 
+
+
+
         // SALVO L'ID E L'USERNAME DELL'UTENTE NELLA SESSIONE
         $_SESSION["user_id"] = $user->getID();
         $_SESSION["user_username"] = $user->getUsername();
 
 
         // Reindirizzo alla pagina principale con l'username
-        header("Location: index.php?username=" . urlencode($username));
+        header("Location: index.php");
+
+        exit;
+
     } else {
         // INSERIMENTO FALLITO, inserisco il messaggio nella variabile errore
         $errore = $stmt->error;

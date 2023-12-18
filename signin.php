@@ -4,6 +4,7 @@ include_once __DIR__ . "/inc/config.php";
 
 session_start();
 
+
 // Verifica se il form è stato inviato
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Prendo i dati dal form
@@ -39,8 +40,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             setcookie('loggedin', $username, time() + 3600);
 
-            // reindirizzo alla pagina con l'username che ha inserito
-            header("Location: index.php?username=" . urlencode($username));
+
+            header("Location: index.php");
+
             exit();
 
         } else {
