@@ -1,7 +1,15 @@
 # Gioco Geocaching
 
-Todo:
-- pagina index.php indipendente
-  - quando un utente entra anche se non registrato deve poter accedere alla pagina index.php senza essere mandato direttamente al login
-- creare pagina per creazione di una partita
-- logica gps
+## Structure:
+-class
+-css
+-img
+-inc
+-js
+-tmpl
+about.php //pagina dove parliamo del gioco
+index.php //presentazione del gioco, pagina aperta a tutti
+profile.php //pagina del singolo giocatore con tutte le sue informazioni
+signin.php //pagina login
+signup.php //pagina registrazione
+home.php //pagine dove può accedere solamente un utente loggato dove può iniziare a giocatre
