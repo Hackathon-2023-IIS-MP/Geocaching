@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             setcookie('loggedin', $username, time() + 3600);
 
 
-            header("Location: index.php");
+            header("Location: home.php");
 
             exit();
 

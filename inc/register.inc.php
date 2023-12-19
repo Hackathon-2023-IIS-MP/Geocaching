@@ -94,7 +94,7 @@ function CreateUser($nome, $cognome, $email, $username, $password, $mysqli)
 
 
         // Reindirizzo alla pagina principale con l'username
-        header("Location: index.php");
+        header("Location: home.php");
 
         exit;
 

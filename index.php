@@ -2,32 +2,6 @@
 
 session_start();
 
-// Check if the session is set
-if (isset($_SESSION["user_id"]) && isset($_SESSION["user_username"])) {
-
-    // Check if the user is a new user
-    if (isset($_COOKIE["loggedin"]) && $_COOKIE["loggedin"] === $_SESSION["user_username"]) {
-        $newuser = false;
-    } else {
-        // Set cookies for new users
-        setcookie('loggedin', $_SESSION["user_username"], time() + 3600);
-        $newuser = true;
-    }
-
-    // Get user id to display
-    $user_id = $_SESSION["user_id"];
-} else {
-    // Redirect to signin if the session is not set
-    RedirectToSignin();
-}
-
-// Redirect to signin function
-function RedirectToSignin()
-{
-    header("Location: signin.php");
-    exit();
-}
-
 /* Include the header of the page */
 include __DIR__ . "/tmpl/header.html.php";
 ?>
@@ -44,7 +18,7 @@ include __DIR__ . "/tmpl/header.html.php";
         <p>Explore and share your adventures.</p>
 
         <!-- Button with Custom Color, Border Radius, and Icon -->
-        <a class="btn btn-primary btn-lg mt-3" href="#" role="button" style="background-color: #081e58; border: none;">
+        <a class="btn btn-primary btn-lg mt-3" href="signin.php" role="button" style="background-color: #081e58; border: none;">
             <i class="fas fa-play"></i> Get Started
         </a>
     </div>

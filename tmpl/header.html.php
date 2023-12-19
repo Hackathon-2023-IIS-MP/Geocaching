@@ -1,3 +1,6 @@
+<?php /* session_start(); */ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,9 +32,19 @@
                     <li class="nav-item">
                         <a class="nav-link" href="about.php">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="profileLink">Profile</a>
-                    </li>
+                    <!-- logica navbar in base a se sei loggato oppure no -->
+                    <?php if (isset($_SESSION["user_id"])) : ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="profileLink">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="logOutLink">Log out</a>
+                        </li>
+                    <?php else: ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="signin.php" id="signInLink">Sign in</a>
+                        </li>
+                    <?php endif ?>
                 </ul>
             </div>
         </div>
@@ -45,6 +58,11 @@
             document.getElementById('profileLink').addEventListener('click', function() {
                 // Redirect to profile.php?username=name
                 window.location.href = 'profile.php?username=<?php echo isset($_SESSION["user_username"]) ? $_SESSION["user_username"] : ""; ?>';
+            });
+
+            document.getElementById('logOutLink').addEventListener('click', function() {
+                // Redirect to profile.php?username=name
+                window.location.href = 'inc/logout.inc.php';
             });
         </script>
 
