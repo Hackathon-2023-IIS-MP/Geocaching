@@ -14,9 +14,9 @@
                 for (let i = 0; i < data.length; i++) {
                     $('#gamesTable tbody').append(`
                         <tr>
-                            <td>${data[i].id}</td>
+                            <td>${data[i].codice}</td>
                             <td>${data[i].name}</td>
-                            <td>${data[i].players}</td>
+                            <td>${data[i].maxGiocatori}</td>
                         </tr>
                     `);
                 }

@@ -1,11 +1,20 @@
 <?php
-// getGames.php
-// Simulate fetching online games data (replace this with your actual logic)
-$gamesData = [
-    ["id" => 1, "name" => "Game 1", "players" => "3/4"],
-    ["id" => 2, "name" => "Game 2", "players" => "2/4"],
-    // Add more game data as needed
-];
+
+include_once __DIR__ . "/config.php";
+
+$smtp = $mysqli->prepare("SELECT * FROM caccie WHERE DataFine IS NULL");
+$smtp->execute();
+
+$result = $smtp->get_result();
+
+$gamesData = [];
+
+
+while($row = $result->fetch_assoc())
+{
+    $newGame = ["codice"=>$row["CodiceCaccia"], "name"=>$row["Nome"], "maxGiocatori"=>$row["MaxGiocatori"]]; //prendo la partita
+    $gamesData[]= $newGame; //la inserisco nell'array associativo
+}
 
 header('Content-Type: application/json');
 echo json_encode($gamesData);
