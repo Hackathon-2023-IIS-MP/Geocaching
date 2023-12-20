@@ -21,6 +21,10 @@ if (isset($_GET["username"])) {
 
             //prendo l'id per mostrarlo
             $user_id = $_SESSION["user_id"];
+
+
+            GetData($user_id);
+            
         } else {
             RedirectToSignin();
         }
@@ -36,6 +40,13 @@ function RedirectToSignin()
 {
     header("Location: signin.php");
     exit();
+}
+
+function GetData()
+{
+    $query = "SELECT * FROM giocatori WHERE ID = ?";
+
+
 }
 
 /* includo l'header della pagina */
