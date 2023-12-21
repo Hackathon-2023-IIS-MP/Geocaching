@@ -1,0 +1,41 @@
+Elenco del percorso delle cartelle
+Numero di serie del volume: BE54-D468
+C:.
+³   about.php
+³   geocaching_DB.sql
+³   home.php
+³   index.php
+³   profile.php
+³   README.md
+³   signin.php
+³   signup.php
+³   tree_structure.txt
+³   
+ÃÄÄÄclass
+³       ClsUser.php
+³       index.html
+³       
+ÃÄÄÄcss
+³       header.css
+³       index.html
+³       
+ÃÄÄÄimg
+³       index.html
+³       logo.ico
+³       logo.png
+³       main.jpg
+³       
+ÃÄÄÄinc
+³       config.php
+³       index.html
+³       logout.inc.php
+³       register.inc.php
+³       
+ÃÄÄÄjs
+³       index.html
+³       
+ÀÄÄÄtmpl
+        footer.html.php
+        header.html.php
+        index.html
+        
